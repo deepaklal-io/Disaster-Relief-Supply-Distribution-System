@@ -354,6 +354,14 @@ Contributions are welcome! Here's how to get involved:
 
 ---
 
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+SPDX-License-Identifier: MIT
+
+---
+
 ## ✅ Conclusion
 
 **ReliefTrack** provides an efficient and reliable solution for managing disaster relief supply distribution using **Java** and **MySQL** through **JDBC connectivity**. Whether deployed by a field team or a coordination center, it delivers the structure and reliability needed when it matters most.
