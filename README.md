@@ -15,7 +15,6 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=for-the-badge)
 
 <br/>
-
 </div>
 
 ---
@@ -95,34 +94,29 @@ Built with **Java Swing** for a responsive desktop UI and **MySQL** for reliable
 ## 📁 Project Structure
 
 ```
-DISASTER-MANAGEMENT-SYS/
+PROJECT OF DSA/
 │
 ├── 📂 database/
-│   └── sqlcode.sql                  # Full DB schema & seed data
+│   └── sqlcode.sql                      # Full DB schema & seed data
 │
 ├── 📂 disasterrelief/
-│   ├── DBConnection.java            # Manages JDBC connection & credentials
-│   ├── InventoryManager.java        # Core inventory business logic
-│   ├── Family.java                  # Family data model
-│   ├── InventoryItem.java           # Relief item data model
-│   ├── LoginUI.java                 # Authentication screen (entry point)
-│   ├── MainUI.java                  # Main dashboard & navigation
-│   ├── InventoryUI.java             # Inventory overview panel
-│   ├── ManageFamiliesUI.java        # Family management panel
-│   ├── RegisterFamilyUI.java        # New family registration form
-│   ├── RestockUI.java               # Supply restocking panel
-│   ├── ViewInventoryUI.java         # Inventory detail view
-│   └── ReportUI.java                # Report generation panel
-│
-├── 📂 lib/
-│   ├── mysql-connector-8.033-java.jar   # MySQL JDBC driver
-│   └── rs2xml.jar                       # ResultSet-to-JTable utility
+│   ├── DBConnection.java                # Manages JDBC connection & credentials
+│   ├── Family.java                      # Family data model
+│   ├── InventoryItem.java               # Relief item data model
+│   ├── InventoryManager.java            # Core inventory business logic
+│   ├── InventoryUI.java                 # Inventory overview panel
+│   ├── LoginUI.java                     # Authentication screen (entry point)
+│   ├── MainUI.java                      # Main dashboard & navigation
+│   ├── manageFamiliesUI.java            # Family management panel
+│   ├── RegisterFamilyUI.java            # New family registration form
+│   ├── report.java                      # Report generation
+│   ├── RestockUI.java                   # Supply restocking panel
+│   ├── rs2xml.jar                       # ResultSet-to-JTable utility (bundled)
+│   └── ViewInventoryUI.java             # Inventory detail view
 │
 ├── 📂 icon/
-│   └── login.png                    # Application icon assets
+│   └── login.png                        # Application icon assets
 │
-├── .gitignore
-├── LICENSE
 └── README.md
 ```
 
@@ -138,7 +132,7 @@ Before running the project, make sure the following are installed and ready:
 | 🐬 **MySQL Server** | [Download here](https://dev.mysql.com/downloads/mysql/) |
 | 🖥️ **CMD / Terminal** | Built-in on Windows, Linux, and macOS |
 | 💡 **Java IDE** *(optional)* | IntelliJ IDEA / Eclipse / NetBeans |
-| 📦 **Required JARs** | `mysql-connector-8.033-java.jar`, `rs2xml.jar` |
+| 📦 **Required JARs** | `mysql-connector-8.033-java.jar` *(in project root)*, `rs2xml.jar` *(inside `disasterrelief/`)* |
 
 > ⚠️ **Important:** If any required JAR file or MySQL connector is missing, the application will **not** run. Ensure both JARs are present in the `lib/` directory before compiling.
 
@@ -166,7 +160,7 @@ mysql -u root -p < database/sqlcode.sql
 4. Open `disasterrelief/DBConnection.java` and update the credentials:
 
 ```java
-private static final String URL      = "jdbc:mysql://localhost:3306/disasterrelief";
+private static final String URL      = "jdbc:mysql://localhost:3306/disaster_relief";
 private static final String USERNAME = "your_mysql_username";
 private static final String PASSWORD = "your_mysql_password";
 ```
@@ -213,8 +207,8 @@ java disasterrelief.MainUI
 
 > 💡 **Tip (Windows):** If you encounter classpath errors with JARs, use:
 > ```bash
-> javac -cp "lib/*" -d out disasterrelief/*.java
-> java -cp "out;lib/*" disasterrelief.LoginUI
+> javac -cp "disasterrelief/rs2xml.jar;disasterrelief/mysql-connector-8.033-java.jar" disasterrelief/*.java
+> java -cp ".;disasterrelief/rs2xml.jar;disasterrelief/mysql-connector-8.033-java.jar" disasterrelief.LoginUI
 > ```
 > On **Linux/macOS**, replace `;` with `:` in the classpath.
 
@@ -346,11 +340,11 @@ Contributions are welcome! Here's how to get involved:
 | Name | GitHub |
 |---|---|
 | **Shahzaib Mahar** | [@smaharx](https://github.com/smaharx) |
-| **Najaf**   | [@najafalinajaf449-hue](https://github.com/najafalinajaf449-hue) |
-| **Deepak**   | [@deepaklal-io](https://github.com/deepaklal-io) |
+| **Najaf** |  [@najafalinajaf449-hue](https://github.com/najafalinajaf449-hue) |
+| **Deepak** | [@deepaklal-io](https://github.com/deepaklal-io) |
+
 
 ---
-
 
 ## ✅ Conclusion
 
