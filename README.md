@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🆘 Disaster Relief Supply Distribution System
+# 🆘 ReliefTrack
 
 ### A Java-based desktop application to manage and streamline the distribution of essential supplies during disaster situations.
 
@@ -15,13 +15,15 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=for-the-badge)
 
 <br/>
+
+
 </div>
 
 ---
 
 ## 📌 Overview
 
-When disasters strike, coordinated response saves lives. The **Disaster Relief Supply Distribution System** helps authorities and relief organizations manage disaster events, track available supplies, and ensure timely delivery to affected areas.
+When disasters strike, coordinated response saves lives. **ReliefTrack** helps authorities and relief organizations manage disaster events, track available supplies, and ensure timely delivery to affected areas.
 
 The system provides a centralized platform to:
 - Register and manage **disaster-affected families**
@@ -29,7 +31,7 @@ The system provides a centralized platform to:
 - Generate **operational reports** for better decision-making
 - Restrict access to **authorized personnel** only
 
-Built with **Java Swing** for a responsive desktop UI and **MySQL** for reliable persistent data storage, this tool is designed for fast deployment in resource-constrained environments where simplicity and reliability matter most.
+Built with **Java Swing** for a responsive desktop UI and **MySQL** for reliable persistent data storage, **ReliefTrack** is designed for fast deployment in resource-constrained environments where simplicity and reliability matter most.
 
 ---
 
@@ -94,7 +96,7 @@ Built with **Java Swing** for a responsive desktop UI and **MySQL** for reliable
 ## 📁 Project Structure
 
 ```
-PROJECT OF DSA/
+ReliefTrack/
 │
 ├── 📂 database/
 │   └── sqlcode.sql                      # Full DB schema & seed data
@@ -134,13 +136,20 @@ Before running the project, make sure the following are installed and ready:
 | 💡 **Java IDE** *(optional)* | IntelliJ IDEA / Eclipse / NetBeans |
 | 📦 **Required JARs** | `mysql-connector-8.033-java.jar` *(in project root)*, `rs2xml.jar` *(inside `disasterrelief/`)* |
 
-> ⚠️ **Important:** If any required JAR file or MySQL connector is missing, the application will **not** run. Ensure both JARs are present in the `lib/` directory before compiling.
+> ⚠️ **Important:** If any required JAR file or MySQL connector is missing, **ReliefTrack** will **not** run. Ensure both JARs are present before compiling.
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### Step 1 — Set Up the MySQL Database
+### Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/deepaklal-io/relieftrack.git
+cd relieftrack
+```
+
+### Step 2 — Set Up the MySQL Database
 
 1. Open **MySQL Workbench** or the **MySQL Command Line**.
 2. Open the provided SQL file: `database/sqlcode.sql`
@@ -160,7 +169,7 @@ mysql -u root -p < database/sqlcode.sql
 4. Open `disasterrelief/DBConnection.java` and update the credentials:
 
 ```java
-private static final String URL      = "jdbc:mysql://localhost:3306/disaster_relief";
+private static final String URL      = "jdbc:mysql://localhost:3306/disasterrelief";
 private static final String USERNAME = "your_mysql_username";
 private static final String PASSWORD = "your_mysql_password";
 ```
@@ -171,7 +180,7 @@ private static final String PASSWORD = "your_mysql_password";
 
 ## ▶️ Running the Application
 
-You can run the project in two ways — via **Command Prompt / Terminal** or using an **IDE**.
+You can run **ReliefTrack** in two ways — via **Command Prompt / Terminal** or using an **IDE**.
 
 ---
 
@@ -180,7 +189,7 @@ You can run the project in two ways — via **Command Prompt / Terminal** or usi
 #### 1️⃣ Open Command Prompt and navigate to the project folder
 
 ```bash
-cd C:\Users\YourUsername\Desktop\project
+cd C:\Users\YourUsername\Desktop\ReliefTrack
 ```
 
 #### 2️⃣ Compile all Java files in the `disasterrelief` package
@@ -219,8 +228,8 @@ java disasterrelief.MainUI
 1. Open **IntelliJ IDEA**, **Eclipse**, or **NetBeans**.
 2. Import the project as an **existing Java project**.
 3. Add the required JARs to the build path:
-   - `lib/mysql-connector-8.033-java.jar`
-   - `lib/rs2xml.jar`
+   - `disasterrelief/rs2xml.jar`
+   - `mysql-connector-8.033-java.jar`
 4. Ensure the **MySQL Server is running**.
 5. Locate `LoginUI.java` or `MainUI.java`.
 6. Right-click the file → select **Run**.
@@ -230,7 +239,7 @@ java disasterrelief.MainUI
 ## 🖥️ Application Modules
 
 ### 🔐 Login Module
-Entry point of the application. Handles secure authentication and restricts access to authorized personnel only.
+Entry point of **ReliefTrack**. Handles secure authentication and restricts access to authorized personnel only.
 
 ### 👨‍👩‍👧 Family Management
 Register and manage disaster-affected households. Captures key details like the head of family, address, contact information, and household size.
@@ -272,8 +281,8 @@ Generates structured reports for family records and inventory data — essential
 
 ## 📝 Important Notes
 
-- ✅ Ensure the **MySQL server is running** before launching the application.
-- ✅ Keep `rs2xml.jar` in the project directory — it is required for table display.
+- ✅ Ensure the **MySQL server is running** before launching **ReliefTrack**.
+- ✅ Keep `rs2xml.jar` inside the `disasterrelief/` folder — it is required for table display.
 - ✅ Do **not** delete `.class` files after compilation unless you plan to recompile.
 - ✅ Always verify your database credentials in `DBConnection.java` before running.
 - ✅ For production use, store DB credentials in environment variables — never hardcode them.
@@ -340,15 +349,14 @@ Contributions are welcome! Here's how to get involved:
 | Name | GitHub |
 |---|---|
 | **Shahzaib Mahar** | [@smaharx](https://github.com/smaharx) |
-| **Najaf** |  [@najafalinajaf449-hue](https://github.com/najafalinajaf449-hue) |
+| **Najaf** | [@najafalinajaf449-hue](https://github.com/najafalinajaf449-hue) |
 | **Deepak** | [@deepaklal-io](https://github.com/deepaklal-io) |
-
 
 ---
 
 ## ✅ Conclusion
 
-The **Disaster Relief Supply Distribution System** provides an efficient and reliable solution for managing relief supply distribution using **Java** and **MySQL** through **JDBC connectivity**. Whether deployed by a field team or a coordination center, it delivers the structure and reliability needed when it matters most.
+**ReliefTrack** provides an efficient and reliable solution for managing disaster relief supply distribution using **Java** and **MySQL** through **JDBC connectivity**. Whether deployed by a field team or a coordination center, it delivers the structure and reliability needed when it matters most.
 
 ---
 
